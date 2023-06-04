@@ -1,0 +1,21 @@
+ALGORITHM three_nb_add
+VAR
+    sentance:STRING[100];
+    nbwords:INTEGER:=1:
+    nbvowels:INTEGER:=0;
+    i:INTEGER;
+BEGIN
+    REPEAT
+        Write("give me the sentance");
+        Read(sentance);
+    UNTIL (sentance[sentance.lenght]=".")
+    for i from 0 to sentance.lenght-1 STEP 1 DO
+        IF (sentance[i]=" ") THEN
+            nbwords=nbwords+1;
+        ELSE_IF (sentance[i].lower in{"a","e","i","u","o"}) THEN
+            nbvowels=nbvowels+1;
+        END_IF
+    END_for
+    write(nbwords);
+    write(nbvowels);
+END
